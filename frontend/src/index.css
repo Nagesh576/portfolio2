@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --glass-bg-light: rgba(255, 255, 255, 0.45);
+    --glass-border-light: rgba(255, 255, 255, 0.4);
+    --glass-bg-dark: rgba(15, 15, 21, 0.6);
+    --glass-border-dark: rgba(255, 255, 255, 0.05);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Smooth Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .dark ::-webkit-scrollbar-track {
+    background: #0f0f15;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+}
+
+/* Glassmorphism utility classes */
+@layer utilities {
+  .glass-card-light {
+    background: var(--glass-bg-light);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border-light);
+  }
+  
+  .glass-card-dark {
+    background: var(--glass-bg-dark);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border-dark);
+  }
+
+  .text-gradient-purple {
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #6d28d9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #67e8f9 0%, #06b6d4 50%, #0891b2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+}
+
+/* Base custom styles for timeline */
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  width: 2px;
+  background: #e2e8f0;
+}
+.dark .timeline-line::before {
+  background: #334155;
+}
+
+@media (min-width: 768px) {
+  .timeline-line::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
