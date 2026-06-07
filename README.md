@@ -1,4 +1,4 @@
-# 🚀 Nagesh Portfolio V2
+# 🚀 Nagesh Portfolio
 
 <img width="1914" height="908" alt="Screenshot 2026-06-07 083240" src="https://github.com/user-attachments/assets/9104004b-4791-4c02-888a-e9e3a8f1d759" />
 
