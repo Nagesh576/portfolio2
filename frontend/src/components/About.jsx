@@ -11,7 +11,7 @@ const About = () => {
       description: 'Focused on Data Structures, Algorithms, Database Management Systems, Software Engineering, and Web Development.'
     },
     {
-      title: 'Holy Cross jr. College',
+      title: 'Intermediate',
       // organization: 'Science Academy College',
       duration: '2021 - 2023',
       description: 'Specialized coursework in Physics, Chemistry and Mathematics.'
