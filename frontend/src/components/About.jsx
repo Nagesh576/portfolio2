@@ -12,7 +12,7 @@ const About = () => {
     },
     {
       title: 'Intermediate',
-      organization: 'Science Academy College',
+      organization: 'Holy Cross jr. College',
       duration: '2021 - 2023',
       description: 'Specialized coursework in Physics, Chemistry and Mathematics.'
     }
