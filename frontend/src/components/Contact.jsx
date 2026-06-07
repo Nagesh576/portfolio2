@@ -92,7 +92,7 @@ const Contact = () => {
                 <div>
                   <h4 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Email Address</h4>
                   <a href="mailto:nagesh@example.com" className="text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-primary-500">
-                    nagesh@example.com
+                    rudraramnagesh29@gmail.com
                   </a>
                 </div>
               </div>
