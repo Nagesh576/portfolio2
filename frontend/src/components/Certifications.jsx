@@ -114,7 +114,7 @@ const Certifications = () => {
   };
 
   return (
-    <section id="certifications" className="py-24 bg-slate-50 dark:bg-dark-950 transition-colors duration-300 relative overflow-hidden">
+    <section id="certifications" className="py-24 bg-transparent transition-colors duration-300 relative overflow-hidden">
       {/* Background flare */}
       <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-primary-500/5 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -144,7 +144,7 @@ const Certifications = () => {
                 viewport={{ once: true }}
                 key={cert._id}
                 onClick={() => setActiveCertificate(cert)}
-                className="p-6 bg-white dark:bg-dark-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-pointer group relative overflow-hidden flex flex-col justify-between"
+                className="p-6 bg-white/80 dark:bg-dark-900/80 backdrop-blur-md rounded-2xl border border-slate-200/60 dark:border-slate-800/60 shadow-glass-light dark:shadow-glass-dark hover:shadow-md hover:border-primary-500/50 transition-all cursor-pointer group relative overflow-hidden flex flex-col justify-between"
               >
                 <div className="absolute top-0 right-0 w-2 h-full bg-primary-500 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-300"></div>
 

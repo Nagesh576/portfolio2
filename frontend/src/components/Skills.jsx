@@ -42,7 +42,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-slate-50 dark:bg-dark-950 transition-colors duration-300 relative overflow-hidden">
+    <section id="skills" className="py-24 bg-transparent transition-colors duration-300 relative overflow-hidden">
       {/* Background blobs */}
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none -ml-48"></div>
 
@@ -66,7 +66,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: catIdx * 0.1 }}
-              className="p-8 bg-white dark:bg-dark-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden"
+              className="p-8 bg-white/80 dark:bg-dark-900/80 backdrop-blur-md rounded-2xl border border-slate-200/60 dark:border-slate-800/60 shadow-glass-light dark:shadow-glass-dark hover:shadow-md transition-all duration-300 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 dark:bg-[#0f0f15] rounded-full translate-x-12 -translate-y-12 -z-10"></div>
               

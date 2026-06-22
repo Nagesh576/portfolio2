@@ -19,7 +19,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-white dark:bg-dark-900 border-y border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
+    <section id="about" className="py-24 bg-white/60 dark:bg-dark-900/60 backdrop-blur-md border-y border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Section Header */}

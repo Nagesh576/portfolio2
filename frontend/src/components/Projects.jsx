@@ -133,7 +133,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-24 bg-white dark:bg-dark-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300 relative">
+    <section id="projects" className="py-24 bg-white/60 dark:bg-dark-900/60 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Section Header */}
@@ -158,7 +158,7 @@ const Projects = () => {
                 placeholder="Search by title, description or technology..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-dark-950 border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 text-sm text-slate-700 dark:text-slate-300 transition-colors"
+                className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/80 dark:bg-dark-950/80 backdrop-blur-md border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 text-sm text-slate-700 dark:text-slate-300 transition-colors"
               />
             </div>
 
@@ -171,7 +171,7 @@ const Projects = () => {
                   className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${
                     selectedCategory === cat
                       ? 'bg-primary-600 text-white shadow-glow-primary'
-                      : 'bg-slate-50 dark:bg-dark-950 text-slate-600 dark:text-slate-400 border border-slate-200/50 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-dark-800'
+                      : 'bg-white/80 dark:bg-dark-950/80 backdrop-blur-md text-slate-600 dark:text-slate-400 border border-slate-200/60 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-dark-800'
                   }`}
                 >
                   {formatCatLabel(cat)}
@@ -193,7 +193,7 @@ const Projects = () => {
                   className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                     selectedTech === tech
                       ? 'bg-primary-500/20 text-primary-600 dark:text-primary-400 border border-primary-500/30'
-                      : 'bg-slate-50 dark:bg-dark-950 text-slate-500 dark:text-slate-400 border border-transparent hover:border-slate-200 dark:hover:border-slate-800'
+                      : 'bg-white/60 dark:bg-dark-950/60 backdrop-blur-sm text-slate-500 dark:text-slate-400 border border-transparent hover:border-slate-200 dark:hover:border-slate-800'
                   }`}
                 >
                   {tech === 'all' ? 'All Tech' : tech}
@@ -247,7 +247,7 @@ const Projects = () => {
                         exit={{ opacity: 0, scale: 0.9 }}
                         transition={{ duration: 0.3 }}
                         key={project._id}
-                        className="bg-slate-50 dark:bg-dark-950 rounded-2xl border border-slate-100 dark:border-slate-800/80 overflow-hidden group shadow-sm hover:shadow-lg transition-all flex flex-col h-full"
+                        className="bg-white/80 dark:bg-dark-950/80 backdrop-blur-md rounded-2xl border border-slate-200/60 dark:border-slate-800/60 overflow-hidden group shadow-glass-light dark:shadow-glass-dark hover:shadow-lg transition-all flex flex-col h-full"
                       >
                         {/* Project Image Frame */}
                         <div className="relative overflow-hidden aspect-[16/10] bg-slate-900">

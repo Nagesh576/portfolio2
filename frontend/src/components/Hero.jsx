@@ -105,13 +105,10 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen pt-28 pb-16 flex items-center relative overflow-hidden bg-slate-50 dark:bg-dark-950 transition-colors duration-300">
+    <section id="home" className="min-h-screen pt-28 pb-16 flex items-center relative overflow-hidden bg-transparent transition-colors duration-300">
       {/* Background Gradients */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-[120px] pointer-events-none -mr-48 -mt-24"></div>
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-violet-600/10 rounded-full blur-[100px] pointer-events-none -ml-40 -mb-20"></div>
-
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
         {/* Intro text */}

@@ -54,7 +54,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white dark:bg-dark-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
+    <section id="contact" className="py-24 bg-white/60 dark:bg-dark-900/60 backdrop-blur-md border-t border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300 relative overflow-hidden">
       {/* Glow shapes */}
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-primary-500/5 rounded-full blur-[120px] pointer-events-none -mr-48"></div>
 
@@ -85,7 +85,7 @@ const Contact = () => {
 
             {/* Info Cards */}
             <div className="space-y-4 my-6">
-              <div className="flex gap-4 items-center p-4 bg-slate-50 dark:bg-dark-950 rounded-2xl border border-slate-100 dark:border-slate-800">
+              <div className="flex gap-4 items-center p-4 bg-white/80 dark:bg-dark-950/80 backdrop-blur-md rounded-2xl border border-slate-200/60 dark:border-slate-800">
                 <div className="p-3 bg-primary-500/10 text-primary-500 rounded-xl">
                   <Mail size={20} />
                 </div>
@@ -97,7 +97,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4 items-center p-4 bg-slate-50 dark:bg-dark-950 rounded-2xl border border-slate-100 dark:border-slate-800">
+              <div className="flex gap-4 items-center p-4 bg-white/80 dark:bg-dark-950/80 backdrop-blur-md rounded-2xl border border-slate-200/60 dark:border-slate-800">
                 <div className="p-3 bg-cyan-500/10 text-cyan-500 rounded-xl">
                   <MapPin size={20} />
                 </div>
@@ -109,7 +109,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4 items-center p-4 bg-slate-50 dark:bg-dark-950 rounded-2xl border border-slate-100 dark:border-slate-800">
+              <div className="flex gap-4 items-center p-4 bg-white/80 dark:bg-dark-950/80 backdrop-blur-md rounded-2xl border border-slate-200/60 dark:border-slate-800">
                 <div className="p-3 bg-violet-500/10 text-violet-500 rounded-xl">
                   <Phone size={20} />
                 </div>
@@ -133,7 +133,7 @@ const Contact = () => {
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="p-8 sm:p-10 rounded-3xl bg-slate-50 dark:bg-dark-950 border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden"
+              className="p-8 sm:p-10 rounded-3xl bg-white/80 dark:bg-dark-950/80 backdrop-blur-md border border-slate-200/60 dark:border-slate-800 shadow-glass-light dark:shadow-glass-dark relative overflow-hidden"
             >
               {/* Status messages banner */}
               {status.success && (

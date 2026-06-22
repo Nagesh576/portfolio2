@@ -4,6 +4,46 @@ const nodemailer = require('nodemailer');
 const Message = require('../models/Message');
 const { protect } = require('../middleware/auth');
 
+// Helper function to send email notification asynchronously in the background
+const sendEmailNotification = async ({ name, email, subject, message }) => {
+  const emailUser = process.env.EMAIL_USER;
+  const emailPass = process.env.EMAIL_PASS;
+  const receiverEmail = process.env.RECEIVER_EMAIL || emailUser;
+
+  // Only attempt email if credentials look configured and are not the defaults
+  if (emailUser && emailPass && !emailUser.includes('your_email') && !emailPass.includes('your_gmail')) {
+    const transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+      port: parseInt(process.env.EMAIL_PORT) || 587,
+      secure: process.env.EMAIL_PORT === '465', // true for 465, false for other ports
+      auth: {
+        user: emailUser,
+        pass: emailPass
+      }
+    });
+
+    const mailOptions = {
+      from: `"${name}" <${emailUser}>`, // sender address (using authenticated email)
+      replyTo: email, // reply to the sender
+      to: receiverEmail, // list of receivers
+      subject: `Portfolio Contact: ${subject || 'New Message'}`, // Subject line
+      html: `
+        <h3>New Message from Portfolio Website</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Subject:</strong> ${subject || 'N/A'}</p>
+        <p><strong>Message:</strong></p>
+        <p style="white-space: pre-line; background-color: #f4f4f4; padding: 15px; border-radius: 5px;">${message}</p>
+      `
+    };
+
+    await transporter.sendMail(mailOptions);
+    console.log(`Email notification successfully sent to ${receiverEmail}`);
+  } else {
+    console.log('Nodemailer skipped: SMTP credentials not fully configured in .env');
+  }
+};
+
 // @desc    Submit a contact form message
 // @route   POST /api/messages
 // @access  Public
@@ -21,48 +61,10 @@ router.post('/', async (req, res) => {
 
     console.log(`Contact message saved in DB from: ${email}`);
 
-    // Try sending email via Nodemailer
-    try {
-      const emailUser = process.env.EMAIL_USER;
-      const emailPass = process.env.EMAIL_PASS;
-      const receiverEmail = process.env.RECEIVER_EMAIL || emailUser;
-
-      // Only attempt email if credentials look configured and are not the defaults
-      if (emailUser && emailPass && !emailUser.includes('your_email') && !emailPass.includes('your_gmail')) {
-        const transporter = nodemailer.createTransport({
-          host: process.env.EMAIL_HOST || 'smtp.gmail.com',
-          port: parseInt(process.env.EMAIL_PORT) || 587,
-          secure: process.env.EMAIL_PORT === '465', // true for 465, false for other ports
-          auth: {
-            user: emailUser,
-            pass: emailPass
-          }
-        });
-
-        const mailOptions = {
-          from: `"${name}" <${emailUser}>`, // sender address (using authenticated email)
-          replyTo: email, // reply to the sender
-          to: receiverEmail, // list of receivers
-          subject: `Portfolio Contact: ${subject || 'New Message'}`, // Subject line
-          html: `
-            <h3>New Message from Portfolio Website</h3>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Subject:</strong> ${subject || 'N/A'}</p>
-            <p><strong>Message:</strong></p>
-            <p style="white-space: pre-line; background-color: #f4f4f4; padding: 15px; border-radius: 5px;">${message}</p>
-          `
-        };
-
-        await transporter.sendMail(mailOptions);
-        console.log(`Email notification successfully sent to ${receiverEmail}`);
-      } else {
-        console.log('Nodemailer skipped: SMTP credentials not fully configured in .env');
-      }
-    } catch (mailError) {
-      // Log error but do not fail the request since database save succeeded!
-      console.error('Nodemailer Error: Failed to send email notification:', mailError.message);
-    }
+    // Call email sending in the background without blocking the HTTP response
+    sendEmailNotification({ name, email, subject, message }).catch((mailError) => {
+      console.error('Nodemailer Error: Failed to send email notification in background:', mailError.message);
+    });
 
     res.status(201).json({
       success: true,

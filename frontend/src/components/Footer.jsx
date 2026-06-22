@@ -59,7 +59,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-50 dark:bg-dark-950 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
+    <footer className="bg-white/40 dark:bg-dark-950/40 backdrop-blur-md border-t border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center pb-8 border-b border-slate-200/50 dark:border-slate-800/50">
           
