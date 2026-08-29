@@ -212,7 +212,7 @@ const Hero = () => {
               <div className="overflow-hidden rounded-2xl w-[280px] h-[340px] sm:w-[320px] sm:h-[400px] relative bg-slate-900 flex items-center justify-center">
                 {/* Profile Photo */}
                 <img
-                  src="/profile1.jpeg"
+                  src="/pro.png"
                   alt="Nagesh Web Developer"
                   className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
                   style={{ objectPosition: 'center 18%' }}
