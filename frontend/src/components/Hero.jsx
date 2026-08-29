@@ -215,7 +215,7 @@ const Hero = () => {
                   src="/profile1.jpeg"
                   alt="Nagesh Web Developer"
                   className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
-                  style={{ objectPosition: 'center 20%' }}
+                  style={{ objectPosition: 'center 18%' }}
                   loading="eager"
                 />
                 
